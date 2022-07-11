@@ -1,0 +1,38 @@
+p{
+  color:blue;
+  font-family: arial;
+  font-size: 20px;
+  align-items: center;
+}
+
+ul{
+  font-size: 16;
+  font-family: sans-serif;
+  color:white;
+  column-fill: balance;
+  background-color: black;
+}
+
+ol{
+  font-style: oblique;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+footer{
+  align-items: center;
+  background-color: green;
+}
+
+h1{
+  align-items: center;
+  font-family: fantasy;
+  background-color: #eb984e;
+}
+
+h2{
+  align-items: flex-start;
+  background-color: #34495e;
+  font-style: oblique;
+  font-family: math;
+}
