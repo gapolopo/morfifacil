@@ -1,0 +1,90 @@
+div {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.flex-container{
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  align-items: flex-end;
+}
+
+.flex-item{
+  color: #3D439C;
+  width: 33%;
+  height: 33%;
+  color:white;
+}
+
+.flex-container2{
+  border-style: solid;
+  display: flex;
+  flex-direction: rows;
+  width: 300px;
+  height: 300px;
+  align-items: center;
+}
+
+.flex-item2{
+  color: #3D439C;
+  width: 33%;
+  height: 33%;
+  color:white;
+}
+
+.flex-container3{
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  height: 100px;
+  justify-content:space-between;
+}
+
+.flex-item3{
+  width: 20%;
+  height: 100%;
+  color:white;
+}
+
+
+body{
+  background: linear-gradient(to left,green,white);
+}
+
+
+ul{
+  font-size: 16;
+  font-family: sans-serif;
+  color:white;
+  column-fill: balance;
+  box-shadow: 10px 15px 20px yellow;
+  background-color: green;
+}
+
+ol{
+  font-style: oblique;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+footer{
+  align-items: center;
+  background-color: green;
+}
+
+h1{
+  align-items: center;
+  font-family: fantasy;
+  background-color: #eb984e;
+}
+
+h2{
+  align-items: flex-start;
+  background-color: #34495e;
+  font-style: oblique;
+  font-family: math;
+}
