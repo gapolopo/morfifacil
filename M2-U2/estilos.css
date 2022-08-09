@@ -88,3 +88,8 @@ h2{
   font-style: oblique;
   font-family: math;
 }
+
+p{
+  text-align: center;
+  vertical-align:center;
+}
