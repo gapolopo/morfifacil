@@ -19,7 +19,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" class="activo" href="home.html">Inicio</a>
+          <a class="nav-link" class="activo" href="index.html">Inicio</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contacto.html">Contacto</a>
@@ -47,9 +47,11 @@
             Administración
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">ABM Usuario</a></li>
+            <li><a class="dropdown-item" href="AltaUsuario.html">Alta de Usuarios</a></li>
+            <li><a class="dropdown-item" href="#">Modificación de Usuarios</a></li>
+            <li><a class="dropdown-item" href="#">Baja de Usuarios</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Login</a></li>
+            <li><a class="dropdown-item" href="login.html">Login</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
         </li>
@@ -67,86 +69,48 @@
   <div class="columnas">
     <section class="Bienvenidos">
       <br>
-      <h2>Contactos</h2>
+      <h2>Alta de usuario</h2>
       <br>
       <p>
-        Ellos son los craneos
+        Ingrese el nuevo usuario.
         <br>
       </p>
     </section>
   </div>
 
-  <div class="container holder">
-
-    <div class="row align-items-center">
-      <div class="col">
-        <div class="card col" style="width: 250px;">
-          <img src="img/nerd1.webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">José</h5>
-            <p class="card-text">Nació en el 2000. Vive en Ituzaingó y es Desarrollador Web Full-Stack</p>
-            <a href="mailto:jose@morfifacil.com" class="btn btn-primary">Escribame</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card col" style="width: 250px;">
-          <img src="img/nerd2.webp" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Manuel</h5>
-            <p class="card-text">Nació en 1998, vive en Salta Capital y es Diseñador Web</p>
-            <a href="mailto:manuel@morfifacil.com" class="btn btn-primary">Escribame</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card col" style="width: 250px;">
-          <img src="img/nerd3.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Mariano</h5>
-            <p class="card-text">Nació en 2001, vive en Ushuaia y es nutricionista.</p>
-            <a href="mailto:mariano@morfifacil.com" class="btn btn-primary">Escribame</a
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-<br><br>
-  <div class="columnas">
-    <section class="Bienvenidos">
-      <br>
-      <h2>Contactos</h2>
-      <br>
-      <p>
-        Desde acá puede realizarnos cualquier consulta que vea necesaria.
-        <br>
-      </p>
-    </section>
-  </div>
-
-<div class="holder2">
+<div class="holder3">
   <form>
     <div class="mb-3">
-      <label for="tnombre" class="form-label">nombre</label>
-      <input type="email" class="form-control" id="tnombre" aria-describedby="emailHelp">
+      <label for="tnombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="tnombre" aria-describedby="emailHelp" placeholder="Tu nombre para saber como llamarte">
     </div>
     <div class="mb-3">
-      <label for="tmail" class="form-label">correo</label>
-      <input type="email" class="form-control" id="tmail" aria-describedby="emailHelp">
+      <label for="tapellido" class="form-label">Apellidos</label>
+      <input type="text" class="form-control" id="tapellido" aria-describedby="emailHelp" placeholder="Para no confundirte con otro">
     </div>
     <div class="mb-3">
-      <label for="stipo" class="form-label">Tipo de consulta</label>
-      <select class="form-select" id="stipo">
-        <option value="1">Consulta</option>
-        <option value="2">Soporte</option>
-        <option value="3">Mejora</option>
+      <label for="tmail" class="form-label">Correo Electrónico</label>
+      <input type="email" class="form-control" id="tmail" aria-describedby="emailHelp" placeholder="Tu mail para recibir notis">
+    </div>
+    <div class="mb-3">
+      <label for="tid" class="form-label">Alias</label>
+      <input type="text" class="form-control" id="tid" aria-describedby="emailHelp" placeholder="Te servirá la loguearte">
+    </div>
+
+    <div class="mb-3">
+      <label for="tid" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="tid" aria-describedby="emailHelp" placeholder="">
+      <label for="tid" class="form-label">Repita contraseña</label>
+      <input type="password" class="form-control" id="tid" aria-describedby="emailHelp" placeholder="">
+    </div>
+
+    <div class="mb-3">
+      <label for="sperfil" class="form-label">Perfil</label>
+      <select class="form-select" id="sperfil">
+        <option value="admin">Administrador</option>
+        <option value="cheff">Cheff</option>
+        <option value="cocinero">Cocinero</option>
       </select>
-    </div>
-    <div class="mb-3">
-      <label for="tconsulta" class="form-label">Consulta</label>
-      <textarea class="form-control" id="tconsulta" rows=6 aria-label="Ingrese su consulta"></textarea>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <button type="submit" class="btn btn-primary ">Enviar</button>
@@ -155,6 +119,63 @@
 </div>
 <br>
 <br>
+
+<div class="columnas">
+  <section class="Bienvenidos">
+    <br>
+    <h2>Usuarios activos</h2>
+    <br>
+  </section>
+</div>
+
+<div class="holder3">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Alias</th>
+      <th scope="col">Perfil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Julio</td>
+      <td>Sosa</td>
+      <td>jose.sosa@gmail.com</td>
+      <td>Josecito</td>
+      <td>Cocinero</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Edmundo</td>
+      <td>Rivero</td>
+      <td>edmundo.rivera@gmail.com</td>
+      <td>edmondo</td>
+      <td>Cocinero</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Anibal</td>
+      <td>Troilo</td>
+      <td>anibal.troilo@gmail.com</td>
+      <td>Elgordo</td>
+      <td>Cheff</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Galo Ruy</td>
+      <td>Budiño</td>
+      <td>galo.budinotroilo@gmail.com</td>
+      <td>Gabu</td>
+      <td>Administrador</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 </main>
 
