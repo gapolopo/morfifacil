@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Morfi-Fácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<header>
+
+</header>
+
+<main class="holder">
+
+  <p><b><i>Ejercicio 1</i></b></p>
+
+
+
+  <div class="container holder">
+    <div class="col-2" id="col1">
+      Columna 1
+    </div>
+    <div class="col-2" id="col2">
+      Columna 2
+    </div>
+    <div class="col-2" id="col3">
+      Columna 3
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+
+  col1.addEventListener('click',function() {
+    col1.style.backgroundColor='black';
+  }, false );
+
+  col2.addEventListener('click',function() {
+    col2.style.backgroundColor='red';
+  }, false );
+
+  col3.addEventListener('click',function() {
+    col3.style.backgroundColor='yellow';
+  }, false );
+
+  </script>
+
+
+  <p><b><i>Ejercicio 2</i></b></p>
+
+
+ <input type="text" id="text1"> <label for="text1" id='label1'>0</label>
+
+
+  <script type="text/javascript">
+
+
+  text1.onkeypress = function() {
+      label1.innerText=text1.value.length;
+  };
+
+
+  </script>
+
+
+  <p><b><i>Ejercicio 3</i></b></p>
+
+
+  <script type="text/javascript">
+
+  var alumnos = [
+    { nombre: 'Juan Gomez', nota: 7},
+    { nombre: 'Pedro Rodriguez', nota: 4},
+    { nombre: 'Roxana García', nota: 8},
+    { nombre: 'Luciano Lopez', nota: 5},
+    { nombre: 'Fernanda Gimenez', nota: 6},
+    { nombre: 'Florencia Martinez', nota: 10},
+    { nombre: 'Raul Sanchez', nota: 7},
+    { nombre: 'Sandra Figueroa', nota: 8}
+  ];
+
+  const aprobados = alumnos.filter(num => num.nota >= 7);
+  console.log(aprobados);
+
+  </script>
+
+</main>
+
+<body>
+</body>
+
+<footer class="holder">
+
+</footer>
+</html>
