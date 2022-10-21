@@ -13,10 +13,11 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.20"
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.20",
+    "util": "^0.12.5"
   },
   "main": "app.js",
-  "devDependencies": {},
   "author": "",
   "license": "ISC",
   "description": ""
