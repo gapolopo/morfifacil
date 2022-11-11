@@ -1,0 +1,35 @@
+<div class="holder3 row justify-content-center">
+  <div class="container">
+    <div class="card-header">Login</div>
+      <div class="card-body">
+        <form method="POST" action="/admin/login">
+            <div class="form-group row">
+              <label for="user" class="col-sm-4 col-form-label text-md-right">Usuario</label>
+              <div class="col-md-6">
+                <input id="user" type="text" class="form-control" name="user" value="" required autofocus>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                <div class="col-md-6">
+                  <input id="password" type="password" class="form-control" name="password" required>
+                </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-6 offset-md-4">   &nbsp;
+              </div>
+            </div>
+            <div class="form-group row mb-0">
+              <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+            <div class="form-group row mb-0">
+              {{#if error}}
+                <p> Usuario y/o Clave Incorrecto </p>
+              {{/if}}
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
