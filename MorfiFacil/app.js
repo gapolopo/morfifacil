@@ -43,6 +43,27 @@ secured = async(req,res,next) => {
   }
 }
 
+
+admin = async(req,res,next) => {
+  try
+  {
+    if(req.session.perfil == 'admin')
+    {
+      console.log("app - middleware admin - usuario con perfil admin");
+      next();
+    }
+    else
+    {
+      console.log("app - middleware admin - El usuario no es admin");
+      res.redirect('/admin/login');
+    }
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+}
+
 // --------------------------------------------------
 
 
@@ -63,10 +84,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var homeRouter = require('./routes/admin/home');
 var loginRouter = require('./routes/admin/login');
+var usuariosRouter = require('./routes/admin/usuarios');
 
-app.use('/', loginRouter);
-app.use('/admin/login', loginRouter);
+app.use('/', homeRouter);
 app.use('/admin/home', secured, homeRouter);
+app.use('/admin/login', loginRouter);
+app.use('/admin/AltaUsuarios', secured, admin, usuariosRouter);
+
+
+// POST method route
+// Access the parse results as request.body
+/*
+app.post('/admin/AltaUsuarios', function(request, response){
+    console.log(request.body.nombre);
+    console.log(request.body.mail);
+});
+*/
+//app.use('/admin/usuarios/nuevo', secured, usuariosRouter);
+
+
 
 //----------------------------------------------------
 

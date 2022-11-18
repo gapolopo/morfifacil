@@ -1,0 +1,54 @@
+Tengo varias secciones que serán dinámicas, algunas serás las siguientes
+
+	AB de usuarios. 
+El administrador podrá dar de alta y baja usuarios. El usuario podrá cambiar la contraseña. La tabla es la siguiente
+
+		CREATE TABLE `usuarios` (
+			`id` BIGINT(9) UNSIGNED NOT NULL AUTO_INCREMENT,
+			`usuario` VARCHAR(200) NOT NULL COLLATE 'latin1_swedish_ci',
+			`nombre` VARCHAR(50) NOT NULL COLLATE 'latin1_swedish_ci',
+			`apellido` VARCHAR(50) NOT NULL COLLATE 'latin1_swedish_ci',
+			`mail` VARCHAR(50) NOT NULL COLLATE 'latin1_swedish_ci',
+			`password` VARCHAR(50) NOT NULL COLLATE 'latin1_swedish_ci',
+			`perfil` VARCHAR(50) NOT NULL COLLATE 'latin1_swedish_ci',
+			PRIMARY KEY (`id`) USING BTREE
+)
+COMMENT='Contiene la info de los usuarios de la solución'
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=7
+;
+
+
+	El que tenga perfil de cheff, podrá hacer ABM de recetas. Se podrán dar de alta recetas
+
+	CREATE TABLE `recetas` (
+	`ID_REC` BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`RECETA` TEXT NOT NULL COLLATE 'latin1_swedish_ci',
+	`DENOMINACION` VARCHAR(100) NOT NULL COLLATE 'latin1_swedish_ci',
+	`FECHA` DATETIME NOT NULL,
+	PRIMARY KEY (`ID_REC`) USING BTREE
+)
+COMMENT='Guarda la colección de recetas'
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+;
+
+	El cheff también podrá administrar el calendario de comidas
+
+
+	CREATE TABLE `calendario` (
+	`ID_REC` BIGINT(20) NOT NULL,
+	`COMIDA` INT(11) NOT NULL COMMENT '0 desayuno, 1 almuerzo, 2 merianda, 3 cena',
+	`FECHA_COMIDA` DATETIME NOT NULL,
+	`FECHA_CARGA` DATETIME NOT NULL,
+	`USUARIO_CARGA` BIGINT(20) NOT NULL,
+	INDEX `FK__recetas` (`ID_REC`) USING BTREE
+)
+COMMENT='Calendario con las recetas por semana'
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+;
+
+
+Tambien Habrá una lista de compras, donde cualquier usuarios podrá ir agregando lo que haya que comprar. Todavia no generé las tablas
