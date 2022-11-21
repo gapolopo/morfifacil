@@ -55,7 +55,63 @@ admin = async(req,res,next) => {
     else
     {
       console.log("app - middleware admin - El usuario no es admin");
-      res.redirect('/admin/login');
+      //res.redirect('/admin/login');
+      res.render('admin/login', {
+        layout:'admin/layout',
+        alert:true,
+        message: 'Para ingresar debe ser administrador',
+     })
+    }
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+}
+
+
+cheff = async(req,res,next) => {
+  try
+  {
+    if(req.session.perfil == 'cheff' || req.session.perfil == 'admin')
+    {
+      console.log("app - middleware cheff - usuario con perfil cheff");
+      next();
+    }
+    else
+    {
+      console.log("app - middleware cheff - El usuario no es cheff");
+      //res.redirect('/admin/login');
+      res.render('admin/login', {
+        layout:'admin/layout',
+        alert:true,
+        message: 'Para ingresar debe ser cheff o administrador',
+     })
+    }
+  }
+  catch(error)
+  {
+    console.log(error);
+  }
+}
+
+cocinero = async(req,res,next) => {
+  try
+  {
+    if(req.session.perfil == 'cocinero' || req.session.perfil == 'cheff' || req.session.perfil == 'admin')
+    {
+      console.log("app - middleware cocinero - usuario con perfil cocinero");
+      next();
+    }
+    else
+    {
+      console.log("app - middleware cocinero - El usuario no es cocinero");
+      //res.redirect('/admin/login');
+      res.render('admin/login', {
+        layout:'admin/layout',
+        alert:true,
+        message: 'Para ingresar debe ser cocinero, cheff o administrador',
+     })
     }
   }
   catch(error)
@@ -85,11 +141,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 var homeRouter = require('./routes/admin/home');
 var loginRouter = require('./routes/admin/login');
 var usuariosRouter = require('./routes/admin/usuarios');
+var recetasRouter = require('./routes/recetas');
+var contactosRouter = require('./routes/contactos');
+var comprasRouter = require('./routes/compras');
 
 app.use('/', homeRouter);
+app.use('/contactos', contactosRouter);
+
 app.use('/admin/home', secured, homeRouter);
 app.use('/admin/login', loginRouter);
+
 app.use('/admin/AltaUsuarios', secured, admin, usuariosRouter);
+app.use('/recetas', cheff, recetasRouter);
+
+app.use('/compras', cocinero, comprasRouter);
 
 
 // POST method route
